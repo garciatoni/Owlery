@@ -1,0 +1,9 @@
+.allSets{
+    @include flex($direction: row, $justify: center, $align: center);
+    gap: 16px;
+    flex-wrap: wrap;
+    max-height: 100vh;
+    // width: 100%;
+    overflow-y: scroll;
+    background-color: lavender;;
+}

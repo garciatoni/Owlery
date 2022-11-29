@@ -1,0 +1,40 @@
+// @import 'include-media';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+$font: 'Poppins', sans-serif;
+
+$breakpoints: (phone: 425px,
+tablet: 768px,
+laptop: 1024px,
+desktop: 1140px,
+bigDesktop: 1440px);
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    @if $direction {
+        flex-direction: $direction;
+    }
+    @if $align {
+        align-items: $align;
+    }
+    @if not $align {
+        align-items: center;
+    }
+}
+
+@mixin grid($rows:1, $columns:1, $columnGap:0px, $rowGap:0px) {
+    display: grid;
+    @if $rows {
+        grid-template-rows: repeat($rows, 1fr);
+    }
+    @if $columns {
+        grid-template-columns: repeat($columns, 1fr);
+    }
+    @if $columnGap {
+        grid-column-gap: $columnGap;
+    }
+    @if $rowGap {
+        grid-row-gap: $rowGap;
+    }
+}
