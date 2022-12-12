@@ -1,0 +1,33 @@
+.setPage{
+    background-color: lavender;;
+    @include flex($direction: column);
+    height: 100vh;
+
+    .menu{
+        @include flex();
+        width: 100%;
+        gap: 20px;
+        .menuColors{
+            @include flex();
+            gap: 10px;
+            img{
+                width: 40px;
+                cursor: pointer;
+            }
+
+        }
+        .setIcon{
+            width: 50px;
+        }
+    }
+    
+    
+    .cards{
+        @include flex();
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        background-color: peru;
+        gap: 10px;
+        width: 100%;
+    }
+}

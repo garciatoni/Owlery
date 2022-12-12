@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import {useGetSets} from '../../hooks'
+import {useGetSets} from '../../../hooks'
 
-import { Set } from './Set/Set.jsx'
+import { SetIcon } from '../SetIcon/SetIcon.jsx'
 
 
 
@@ -12,11 +12,11 @@ export const AllSets = () => {
     const {getAllSets} = useGetSets();
     
     const { allSets } = useSelector(state => state.sets);
-    
+
+
     useEffect(() => {
-        getAllSets();
+        !allSets && getAllSets();
     }, [])
-    
 
 
 
@@ -26,7 +26,7 @@ export const AllSets = () => {
         <div className={style.allSets}>
         {
         allSets && (
-            allSets?.map( (set, id) =>( ['core', 'expansion', 'masters', 'funny'].includes(set.set_type) && <Set key={id} {...set} /> ))
+            allSets?.map( (set, id) =>( ['core', 'expansion', 'masters', 'funny'].includes(set.set_type) && <SetIcon key={id} {...set} /> ))
         )
         }
         </div>

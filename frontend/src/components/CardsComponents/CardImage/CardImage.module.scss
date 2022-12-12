@@ -1,0 +1,35 @@
+.cardImage{
+    max-height: 350px;
+    width: 251px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    
+    .image, .front, .back{
+        max-height: 350px;
+        min-width: 0;
+        border-radius: 4.75% / 3.5%;
+        top: 0;
+    }
+    .back{
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: transform .3s linear;
+    }
+    .front{
+        transform: rotateY(0deg);
+        backface-visibility: hidden;
+        transition: transform .3s linear;
+    }
+    &:hover{
+        .front{
+            transform: rotateY(-180deg);
+        }
+        .back{
+            transform: rotateY(0deg);
+        }
+
+    }
+
+}

@@ -3,8 +3,6 @@ import axios from 'axios';
 
 // const { SCRYFALL_API_URL } = getEnvVariables();
 
-// console.log(SCRYFALL_API_URL)
-
 const scryfallApi = axios.create({
     baseURL: "https://api.scryfall.com",
 })

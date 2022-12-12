@@ -8,19 +8,26 @@ export const useGetSets = () => {
     const getAllSets = async () => {
         try {
             const {data} = await scryfallApiUrl.get('/sets');
-            console.log(data.data);
             dispatch(setAllSets(data.data));
-            // return data.data;
         }
         catch (error) {
             console.log(error);
         }
-
+    }
+    
+    const getSet = async (code) => {
+        try {
+            const {data} = await scryfallApiUrl.get(`/sets/${code}`);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 
     return{
 
-        getAllSets
+        getAllSets,
+        getSet
 
     }
 }
